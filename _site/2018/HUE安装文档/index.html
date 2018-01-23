@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>HUE安装文档</title>
+  <meta name="description" content="
+
+">
+  <meta name="author" content="doudoutiao">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HUE安装文档">
+  <meta name="twitter:description" content="
+
+">
+  
+  <meta name="twitter:creator" content="doudoutiao">
+  
+  <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HUE安装文档">
+  <meta property="og:description" content="
+
+">
+  <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/css/main.css?1516724343464333000">
+  <link rel="canonical" href="http://localhost:4000/2018/HUE%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/">
+  <link rel="alternate" type="application/rss+xml" title="doudoutiao" href="/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of doudoutiao">
+          <img src="/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">doudoutiao</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">personal blog for doudoutiao</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to doudoutiao blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+<!--         <nav class="cover-navigation navigation--social">-->
+<!--            <ul class="navigation">-->
+
+            
+              <!-- Twitter -->
+<!--
+              <li class="navigation__item">
+                <a href="http://twitter.com/doudoutiao" title="@doudoutiao on Twitter" target="_blank">
+                  <i class="icon icon-social-twitter"></i>
+                  <span class="label">Twitter</span>
+                </a>
+              </li>
+-->
+            
+
+            
+              <!-- Facebook -->
+<!--
+              <li class="navigation__item">
+                <a href="http://fb.me/doudoutiao" title="doudoutiao on Facebook" target="_blank">
+                  <i class="icon icon-social-facebook"></i>
+                  <span class="label">Facebook</span>
+                </a>
+              </li>
+-->
+            
+
+            
+              <!-- LinkedIn -->
+<!--
+              <li class="navigation__item">
+                <a href="https://www.linkedin.com/in/doudoutiao" title="doudoutiao on LinkedIn" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+-->
+            
+
+            
+              <!-- GitHub -->
+<!--
+              <li class="navigation__item">
+                <a href="https://www.github.com/doudoutiao" title="doudoutiao on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+-->
+            
+
+            
+              <!-- Email -->
+<!--
+              <li class="navigation__item">
+                <a href="mailto:junyangzhang1019@gmail.com" title="Email junyangzhang1019@gmail.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+-->
+            
+
+            <!-- RSS -->
+<!--
+            <li class="navigation__item">
+              <a href="/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+-->
+
+<!--            </ul>-->
+<!--          </nav>-->
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-01-22 15:04" class="post-meta__date date">22 Jan 2018</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/tags/#hue">hue</a> </span>
+      
+    </div>
+    <h1 class="post-title">HUE安装文档</h1>
+  </header>
+
+  <section class="post">
+    <hr />
+
+<h2 id="编译hue">编译HUE</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd hue</span>
+<span class="c"># make apps</span>
+<span class="c"># chown -R hue.hue hue</span>
+
+<span class="c">## 启动</span>
+hue/build/env/bin/supervisor
+</code></pre></div></div>
+<h2 id="修改配置文件">修改配置文件</h2>
+<h3 id="hue与hadoop集成">Hue与Hadoop集成</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## a) 配置etc/hadoop/conf/hdfs-site.xml
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>dfs.webhdfs.enabled<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>true<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>dfs.permissions.enabled<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>false<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+
+##　b)配置etc/hadoop/conf/core-site.xml:
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hadoop.proxyuser.hue.hosts<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>*<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hadoop.proxyuser.hue.groups<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>*<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+</code></pre></div></div>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## c)配置hue/desktop/conf/hue.ini
+</span><span class="nn">[[hdfs_clusters]</span><span class="err">]</span>
+    <span class="nn">[[[default]</span><span class="err">]]</span>
+      <span class="py">fs_defaultfs</span><span class="p">=</span><span class="s">hdfs://bigdata01:8020</span>
+      <span class="py">webhdfs_url</span><span class="p">=</span><span class="s">http://bigdata01:50070/webhdfs/v1</span>
+      <span class="py">hadoop_conf_dir</span><span class="p">=</span><span class="s">/etc/hadoop/conf</span>
+  <span class="nn">[[yarn_clusters]</span><span class="err">]</span>
+    <span class="nn">[[[default]</span><span class="err">]]</span>
+      <span class="py">resourcemanager_host</span><span class="p">=</span><span class="s">bigdata01</span>
+      <span class="py">resourcemanager_port</span><span class="p">=</span><span class="s">8032</span>
+      <span class="py">submit_to</span><span class="p">=</span><span class="s">True</span>
+      <span class="py">resourcemanager_api_url</span><span class="p">=</span><span class="s">http://bigdata01:8088</span>
+      <span class="py">proxy_api_url</span><span class="p">=</span><span class="s">http://bigdata01:8088</span>
+      <span class="py">history_server_api_url</span><span class="p">=</span><span class="s">http://bigdata01:19888	</span>
+
+</code></pre></div></div>
+
+<h3 id="hue与hive集成">Hue与Hive集成</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## a)修改hive-site.xml:
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hive.server2.thrift.port<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>10000<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hive.server2.thrift.bind.host<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>bigdata01<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hive.server2.long.polling.timeout<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>5000<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+<span class="c">&lt;!--thriftserver服务--&gt;</span>
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hive.metastore.uris<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>thrift://bigdata01:9083<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;description&gt;</span>Thrift URI for the remote metastore. Used by metastore client to connect to remote metastore.<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+
+</code></pre></div></div>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## b)配置hue/desktop/conf/hue.ini
+</span><span class="nn">[beeswax]</span>
+  <span class="py">hive_server_host</span><span class="p">=</span><span class="s">bigdata01</span>
+  <span class="py">hive_server_port</span><span class="p">=</span><span class="s">10000</span>
+  <span class="py">hive_conf_dir</span><span class="p">=</span><span class="s">/etc/hive/conf	</span>
+</code></pre></div></div>
+
+<h3 id="hue与mysql集成">Hue与Mysql集成</h3>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nn">[[[mysql]</span><span class="err">]]</span>
+      <span class="py">nice_name</span><span class="p">=</span><span class="s">"My SQL DB"</span>
+      <span class="py">engine</span><span class="p">=</span><span class="s">mysql</span>
+      <span class="py">host</span><span class="p">=</span><span class="s">bigdata01</span>
+      <span class="py">port</span><span class="p">=</span><span class="s">3306</span>
+      <span class="py">user</span><span class="p">=</span><span class="s">root</span>
+      <span class="py">password</span><span class="p">=</span><span class="s">root</span>
+</code></pre></div></div>
+
+<h3 id="hue与hbase集成">Hue与HBase集成</h3>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## a) 修改hue.ini
+</span><span class="py">hbase_clusters</span><span class="p">=</span><span class="s">(Cluster|bigdata01:9090)</span>
+<span class="py">hbase_conf_dir</span><span class="p">=</span><span class="s">/etc/hbase/conf</span>
+</code></pre></div></div>
+
+<h3 id="hue与oozie集成">Hue与Oozie集成</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##　a) 修改oozie-site.xml：
+<span class="nt">&lt;property&gt;</span>
+	<span class="nt">&lt;name&gt;</span>oozie.processing.timezone<span class="nt">&lt;/name&gt;</span>
+	<span class="nt">&lt;value&gt;</span>UTC<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+
+
+</code></pre></div></div>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## b) 修改hue.ini：
+</span><span class="nn">[liboozie]</span>
+  <span class="py">oozie_url</span><span class="p">=</span><span class="s">http://bigdata01:11000/oozie</span>
+  <span class="py">remote_deployement_dir</span><span class="p">=</span><span class="s">/user/junyang/oozie-apps/</span>
+<span class="nn">[oozie]</span>
+  <span class="py">local_data_dir</span><span class="p">=</span><span class="s">/etc/oozie/examples</span>
+  <span class="py">sample_data_dir</span><span class="p">=</span><span class="s">/etc/oozie/oozie-apps</span>
+  <span class="py">remote_data_dir</span><span class="p">=</span><span class="s">/user/junyang/oozie-apps/</span>
+  <span class="py">enable_cron_scheduling</span><span class="p">=</span><span class="s">true</span>
+</code></pre></div></div>
+
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 doudoutiao. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js?1516724343464333000"></script>
+
+
+    </div>
+  </body>
+</html>

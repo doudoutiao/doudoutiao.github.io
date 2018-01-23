@@ -1,0 +1,152 @@
+---
+title:  "HUE安装文档"
+date:   2018-01-22 15:04:23
+categories: [hue]
+tags: [hue]
+
+---
+
+
+
+---
+
+## 编译HUE
+
+
+```sh
+# cd hue
+# make apps
+# chown -R hue.hue hue
+
+## 启动
+hue/build/env/bin/supervisor
+```
+## 修改配置文件
+### Hue与Hadoop集成
+
+
+```xml
+## a) 配置etc/hadoop/conf/hdfs-site.xml
+<property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+</property>
+<property>
+    <name>dfs.permissions.enabled</name>
+    <value>false</value>
+</property>
+
+##　b)配置etc/hadoop/conf/core-site.xml:
+<property>
+    <name>hadoop.proxyuser.hue.hosts</name>
+    <value>*</value>
+</property>
+<property>
+    <name>hadoop.proxyuser.hue.groups</name>
+    <value>*</value>
+</property>
+```
+```ini
+## c)配置hue/desktop/conf/hue.ini
+[[hdfs_clusters]]
+    [[[default]]]
+      fs_defaultfs=hdfs://bigdata01:8020
+      webhdfs_url=http://bigdata01:50070/webhdfs/v1
+      hadoop_conf_dir=/etc/hadoop/conf
+  [[yarn_clusters]]
+    [[[default]]]
+      resourcemanager_host=bigdata01
+      resourcemanager_port=8032
+      submit_to=True
+      resourcemanager_api_url=http://bigdata01:8088
+      proxy_api_url=http://bigdata01:8088
+      history_server_api_url=http://bigdata01:19888	
+
+```
+
+
+### Hue与Hive集成
+
+```xml
+## a)修改hive-site.xml:
+<property>
+    <name>hive.server2.thrift.port</name>
+    <value>10000</value>
+</property>
+<property>
+    <name>hive.server2.thrift.bind.host</name>
+    <value>bigdata01</value>
+</property>
+<property>
+    <name>hive.server2.long.polling.timeout</name>
+    <value>5000</value>
+</property>
+<!--thriftserver服务-->
+<property>
+    <name>hive.metastore.uris</name>
+    <value>thrift://bigdata01:9083</value>
+    <description>Thrift URI for the remote metastore. Used by metastore client to connect to remote metastore.</description>
+</property>
+
+```
+```ini
+## b)配置hue/desktop/conf/hue.ini
+[beeswax]
+  hive_server_host=bigdata01
+  hive_server_port=10000
+  hive_conf_dir=/etc/hive/conf	
+```
+
+
+### Hue与Mysql集成
+
+
+```ini
+    [[[mysql]]]
+      nice_name="My SQL DB"
+      engine=mysql
+      host=bigdata01
+      port=3306
+      user=root
+      password=root
+```
+
+### Hue与HBase集成
+
+
+```ini
+## a) 修改hue.ini
+hbase_clusters=(Cluster|bigdata01:9090)
+hbase_conf_dir=/etc/hbase/conf
+```
+
+
+
+### Hue与Oozie集成
+
+
+```xml
+##　a) 修改oozie-site.xml：
+<property>
+	<name>oozie.processing.timezone</name>
+	<value>UTC</value>
+</property>
+
+
+```
+
+```ini
+## b) 修改hue.ini：
+[liboozie]
+  oozie_url=http://bigdata01:11000/oozie
+  remote_deployement_dir=/user/junyang/oozie-apps/
+[oozie]
+  local_data_dir=/etc/oozie/examples
+  sample_data_dir=/etc/oozie/oozie-apps
+  remote_data_dir=/user/junyang/oozie-apps/
+  enable_cron_scheduling=true
+```
+
+
+
+
